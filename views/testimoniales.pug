@@ -1,0 +1,26 @@
+extends ./layouts/Index.pug
+
+block contenido
+    main(class="container mt-5")
+        h1(class="text-center mt-5")= pagina
+        include ./layouts/blockTestimoniales.pug
+
+        div(class="row")
+            div(class="col-md-12")
+                h2(class="d-block w-100 text-center") Agrega un testimonial
+            div(class="row justify-content-center col")
+                div(class="col-md-8")
+                    form(action="/testimoniales" method="POST")
+                        div(class="form-group")
+                            label(for="nombre") Nombre
+                            input(id="nombre" type="text" placeholder="Tu nombre" name="nombre" class="form-control" value=nombre)
+                        div(class="form-group")
+                            label(for="email") Email
+                            input(id="email" type="text" placeholder="Tu email" name="email" class="form-control" value=email)
+                        div(class="form-group")
+                            label(for="mensaje") Mensaje
+                            textarea(id= "mensaje" class="form-control" placeholder="Tu mensaje" name="mensaje" rows=3)= mensaje
+                        input(class="btn btn-success btn-block mb-3" type="submit")
+                        if(errores)
+                            each error in errores 
+                                div(class="alert alert-danger col text-center p-1")= error.mensaje

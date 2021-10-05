@@ -1,0 +1,30 @@
+extends ./layouts/Index.pug
+
+block slider
+    div(class="slider")
+        h1 RIO DE JANEIRO 
+        em aventura
+
+block contenido
+    main(class="container mt-5")
+        h2(class="text-center mb-5") Sobre Nosotros 
+        div(class="row mb-5")
+            div(class="col-md-6")
+                p It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                p It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            div(class="col-md-6")
+                img(src="/img/inicio_nosotros.jpg" alt="nosotros inicio" class="img-fluid")
+        include ./layouts/blockViajes.pug
+
+    div(class="descuento")
+        div(class="container")
+            div(class="row")
+                div(class="col-md-6")
+                    div(class="contenido")
+                        h3 5% de Descuento 
+                        p VIAJE A CANADÁ
+                        p(class="fecha") 20/03/20212- 28/03/2022
+                        p(class="precio") $2,500 USD
+    div(class="container")
+        h2(class="mt-5 text-center") Testimoniales
+        include ./layouts/blockTestimoniales.pug
